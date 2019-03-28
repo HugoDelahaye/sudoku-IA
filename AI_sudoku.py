@@ -3,23 +3,13 @@ import numpy as np
 from tkinter import *
 from random import randint
 from copy import deepcopy
-import math
 
-
-def norm_func(x):             
-    return 1.0/(1+math.exp(-x))   #sigmoïde
-    
-def der_norm_func(x):
-    y = math.exp(-x)               #dérivée de la sigmoïde
-    return y/(1+y)**2
-
-
-    
+         
     
 class App():
     def __init__(self, parent):
         self.root = parent
-        self.quizzes = np.load('C:\\Users\\Hugo\\Documents\\python\\Sudoku\\sudoku.npy') 
+        self.quizzes = np.load('sudoku.npy') 
         self.pixels = 50
         self.width = 9*self.pixels
         self.gameframe = Frame(self.root)
